@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "P:\\temp\\CS371\\CS371PigGameStarter\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-v14\\values-v14.xml",
+            "outputFile": "/Users/johnhaas/Desktop/Object Oriented Design/Team Assignments/PigGameStarter/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v14/values-v14.xml",
             "map": [
                 {
-                    "source": "P:\\temp\\CS371\\CS371PigGameStarter\\app\\src\\main\\res\\values-v14\\styles.xml",
+                    "source": "/Users/johnhaas/Desktop/Object Oriented Design/Team Assignments/PigGameStarter/app/src/main/res/values-v14/styles.xml",
                     "from": {
                         "startLines": "2",
                         "startColumns": "4",
