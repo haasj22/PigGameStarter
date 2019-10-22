@@ -46,7 +46,9 @@ public class PigLocalGame extends LocalGame {
                 officialGameState.setPlayer0Score(officialGameState.getPlayer0Score()
                         + officialGameState.getCurrentRunningTotal());
                 officialGameState.setCurrentRunningTotal(0);
-                officialGameState.setCurrentPlayerID(1);
+                if (players.length > 1 ) {
+                    officialGameState.setCurrentPlayerID(1);
+                }
             } else {
                 officialGameState.setPlayer1Score(officialGameState.getPlayer1Score()
                         + officialGameState.getCurrentRunningTotal());
@@ -59,17 +61,16 @@ public class PigLocalGame extends LocalGame {
             int dieVal = (int)(Math.random() * 6) + 1;
             officialGameState.setCurrentDieValue(dieVal);
             if(dieVal != 1) {
-                officialGameState.setCurrentRunningTotal
-                        (officialGameState.getCurrentRunningTotal() + dieVal);
-
+                officialGameState.setCurrentRunningTotal(officialGameState.getCurrentRunningTotal() + dieVal);
             } else {
                 officialGameState.setCurrentRunningTotal(0);
-                officialGameState.setCurrentPlayerID((officialGameState.getCurrentPlayerID() + 1) % 2);
+                if (players.length > 1 ) {
+                    officialGameState.setCurrentPlayerID((officialGameState.getCurrentPlayerID() + 1) % 2);
+                }
             }
             return true;
-        } else {
-            return false;
         }
+            return false;
     }//makeMove
 
     /**

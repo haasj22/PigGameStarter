@@ -64,20 +64,20 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
     @Override
     public void receiveInfo(GameInfo info) {
         if(info instanceof PigGameState) {
-            PigGameState cpy = (PigGameState) info;
-
+            //PigGameState cpy = (PigGameState) info;
+            PigGameState cpy = new PigGameState((PigGameState) info);
             String text= "";
             String entext = "";
             if(cpy.getCurrentPlayerID() == 0) {
-                text += "Player 0 current score is " + cpy.getPlayer0Score();
-                entext += "Opponent current score is " + cpy.getPlayer1Score();
+                text += "" + cpy.getPlayer0Score();
+                entext += "" + cpy.getPlayer1Score();
             } else {
-                text += "Player 1 current score is " + cpy.getPlayer1Score();
-                entext += "Opponent current score is " + cpy.getPlayer0Score();
+                text += "" + cpy.getPlayer1Score();
+                entext += "" + cpy.getPlayer0Score();
             }
             playerScoreTextView.setText(text);
             oppScoreTextView.setText(entext);
-            String runText="Current running total is: " + cpy.getCurrentRunningTotal();
+            String runText="" + cpy.getCurrentRunningTotal();
             turnTotalTextView.setText(runText);
 
             switch(cpy.getCurrentDieValue()) {
@@ -107,7 +107,7 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
                     break;
             }
         } else {
-            flash(Color.RED, 2000);
+            flash(Color.RED, 250);
         }
     }//receiveInfo
 
