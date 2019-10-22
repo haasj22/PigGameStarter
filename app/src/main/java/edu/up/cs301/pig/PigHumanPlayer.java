@@ -106,7 +106,6 @@ public class PigHumanPlayer extends GameHumanPlayer implements OnClickListener {
                     this.getTopView().invalidate();
                     break;
             }
-            this.getTopView().invalidate();
         } else {
             flash(Color.RED, 2000);
         }

@@ -57,6 +57,7 @@ public class PigLocalGame extends LocalGame {
         }
         if(action instanceof PigRollAction) {
             int dieVal = (int)(Math.random() * 6) + 1;
+            officialGameState.setCurrentDieValue(dieVal);
             if(dieVal != 1) {
                 officialGameState.setCurrentRunningTotal
                         (officialGameState.getCurrentRunningTotal() + dieVal);
@@ -90,12 +91,11 @@ public class PigLocalGame extends LocalGame {
     protected String checkIfGameOver() {
         if(officialGameState.getPlayer0Score() >= 50 || officialGameState.getPlayer1Score() >= 50) {
             if(officialGameState.getPlayer0Score() >= 50) {
-                System.out.println("Player 0 wins with a score of " + officialGameState.getPlayer0Score());
+                return "Player 0 wins with a score of " + officialGameState.getPlayer0Score();
             } else {
-                System.out.println("Player 1 wins with a score of " + officialGameState.getPlayer1Score());
+                return "Player 1 wins with a score of " + officialGameState.getPlayer1Score();
             }
         }
-
         return null;
     }
 
